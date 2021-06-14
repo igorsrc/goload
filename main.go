@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bytes"
 	"encoding/json"
 	"fmt"
 	. "goload/model"
@@ -46,8 +45,7 @@ func ProcessRequests(request *Request) []Result {
 				resChan <- Get(req.Address)
 			}
 			if request.Method == MethodPost {
-				body := replaceRegexp(request.Payload)
-				resChan <- Post(req.Address, "application/json", bytes.NewBuffer([]byte(body)))
+				resChan <- Post(req.Address, "application/json", request.Payload)
 			}
 
 			// wait before release

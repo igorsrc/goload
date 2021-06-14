@@ -22,8 +22,9 @@ func Get(addr string) *Result {
 	}
 }
 
-func Post(addr string, contentType string, body *bytes.Buffer) *Result {
-	resp, err := http.Post(addr, contentType, body)
+func Post(addr string, contentType string, bodyStr string) *Result {
+	body := replaceRegexp(bodyStr)
+	resp, err := http.Post(addr, contentType, bytes.NewBuffer([]byte(body)))
 	if err != nil {
 		log.Println(err)
 		return &Result{
