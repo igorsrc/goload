@@ -16,9 +16,7 @@ func Get(addr string) *Result {
 			Err:  err,
 		}
 	}
-	return &Result{
-		Code: resp.StatusCode,
-	}
+	return &Result{Code: resp.StatusCode}
 }
 
 func Post(addr string, contentType string, bodyStr string) *Result {
@@ -31,7 +29,5 @@ func Post(addr string, contentType string, bodyStr string) *Result {
 			Err:  err,
 		}
 	}
-	return &Result{
-		Code: resp.StatusCode,
-	}
+	return &Result{Code: resp.StatusCode}
 }
