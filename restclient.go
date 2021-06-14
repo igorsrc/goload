@@ -17,8 +17,7 @@ func Get(addr string) *Result {
 		}
 	}
 	return &Result{
-		Code:    resp.StatusCode,
-		Payload: &resp.Body,
+		Code: resp.StatusCode,
 	}
 }
 
@@ -33,7 +32,6 @@ func Post(addr string, contentType string, bodyStr string) *Result {
 		}
 	}
 	return &Result{
-		Code:    resp.StatusCode,
-		Payload: &resp.Body,
+		Code: resp.StatusCode,
 	}
 }

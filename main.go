@@ -35,6 +35,7 @@ func ProcessRequests(request *Request) []Result {
 
 	for i := 0; i < request.Count; i++ {
 
+		// run goroutine
 		go func(i int, req *Request) {
 
 			// fill until limit reaches
