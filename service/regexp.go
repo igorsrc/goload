@@ -1,4 +1,4 @@
-package main
+package service
 
 const (
 	randomInt  = "{$random.int}"
@@ -6,6 +6,6 @@ const (
 	randomLong = "{$random.long}"
 )
 
-func replaceRegexp(json string) string {
-	return json
+func replaceRegexp(body string) string {
+	return body
 }
