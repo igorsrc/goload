@@ -19,8 +19,8 @@ var (
 	token      string
 	payload    string
 	count      int
-	concurrent uint32
-	backoff    uint32
+	concurrent int
+	backoff    int
 	debug      bool
 
 	cmdGet = &cobra.Command{
@@ -66,13 +66,13 @@ func init() {
 		"n",
 		defaultNumber,
 		"number of requests")
-	cmdGet.Flags().Uint32VarP(
+	cmdGet.Flags().IntVarP(
 		&concurrent,
 		"concurrent",
 		"c",
 		defaultConcurrency,
 		"concurrency rate")
-	cmdGet.Flags().Uint32VarP(
+	cmdGet.Flags().IntVarP(
 		&backoff,
 		"backoff",
 		"b",

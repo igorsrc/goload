@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func Get(addr string, concur, backoff uint32, count int) []Result {
+func Get(addr string, concur, backoff int, count int) []Result {
 	// validation
 	isUrlCorrect(addr)
 
