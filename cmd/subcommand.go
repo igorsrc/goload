@@ -53,38 +53,33 @@ var (
 )
 
 func init() {
-	// get flags section
+	// get
 	cmdGet.Flags().StringVarP(
 		&address,
-		"address",
-		"a",
+		"address", "a",
 		"",
 		"target api address")
 	cmdGet.Flags().IntVarP(
 		&count,
-		"number",
-		"n",
+		"number", "n",
 		defaultNumber,
 		"number of requests")
 	cmdGet.Flags().IntVarP(
 		&concurrent,
-		"concurrent",
-		"c",
+		"concurrent", "c",
 		defaultConcurrency,
 		"concurrency rate")
 	cmdGet.Flags().IntVarP(
 		&backoff,
-		"backoff",
-		"b",
+		"backoff", "b",
 		defaultBackOff,
 		"backoff")
 	cmdGet.Flags().BoolVarP(&debug,
-		"debug",
-		"d",
+		"debug", "d",
 		defaultDebug,
 		"debug mode")
 
 	_ = cmdGet.MarkFlagRequired("address")
 
-	// post flag section
+	// post
 }
