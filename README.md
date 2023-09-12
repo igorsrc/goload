@@ -1,0 +1,2 @@
+# goload
+cli load app
